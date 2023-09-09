@@ -17,9 +17,21 @@ function seleccionarInstrumentos(){
     botonSelInstru.classList.add("selected");
     botonSelDisc.classList.remove("selected");
     botonSelSearch.classList.remove("selected");
-    ocultarBarraBusqueda();
     generarTituloSeccion("Instrumentos");
-    obtenerInstrumentos();
+    
+    
+    obtenerInstrumentos().then(data =>{
+        ocultarBarraBusqueda();
+        var panelResultados = document.querySelector(".results");
+        panelResultados.innerHTML="";//Limpiamos el panel de resultados
+
+        for(id in data){
+            desplegarInstrumentos(data[id]);
+        }
+
+    }).catch(error => {
+        desplegarErrorMesage();
+    });
 }
 
 function seleccionarDiscos(){
@@ -34,7 +46,7 @@ function seleccionarDiscos(){
     obtenerDiscos()
   .then(data => {
     //DATA
-    console.log(data);
+    //console.log(data);
 
     var panelResultados = document.querySelector(".results");
     panelResultados.innerHTML = ""; // Limpiamos el panel de resultados
@@ -106,24 +118,33 @@ function generarTituloSeccion(cadena){
 }
 
 function obtenerInstrumentos(){
-    var cliente = new WSClient(URL);
-    var cookie = getCookie("sesion");
+    return new Promise((resolve, reject)=>{
+        var cliente = new WSClient(URL);
+        var cookie = getCookie("sesion");
 
-    cliente.postJson("obtener_instrumentos_basico",{
-        "cookie":cookie
-    },
-    function(code, result){
-        if(code == 200){
-            var panelResultados = document.querySelector(".results");
-            panelResultados.innerHTML="";//Limpiamos el panel de resultados
+        cliente.postJson("obtener_instrumentos_basico",{
+            "cookie":cookie
+        },
+        function(code, result){
+            if(code == 200){
+                /*
+                var panelResultados = document.querySelector(".results");
+                panelResultados.innerHTML="";//Limpiamos el panel de resultados
+    
+                for(id in result){
+                    desplegarInstrumentos(result[id]);
+                }*/
 
-            for(id in result){
-                desplegarInstrumentos(result[id]);
+                resolve(result);
+            }else{
+                //alert("Ha ocurrido un error");
+                reject("Ha ocurrido un error");
             }
-        }else{
-            alert("Ha ocurrido un error");
-        }
-    });
+        });
+
+    })
+
+
 
 }
 

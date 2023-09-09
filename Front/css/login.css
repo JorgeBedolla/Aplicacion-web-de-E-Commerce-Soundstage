@@ -109,6 +109,24 @@
     margin: 5px;
 }
 
+.load_login{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+    left: 35%;
+    padding: 150px 5px 150px 5px;
+    margin: 5px;
+    background-color: whitesmoke;
+    border-radius: 25px;
+}
+
+.load_login img{
+    max-width: 7%;
+    animation: rotate 0.7s linear infinite;
+}
 
 
 @keyframes rotate {
@@ -119,6 +137,7 @@
       transform: rotate(360deg);
     }
 }
+
 
 @media(max-width: 720px){
 
@@ -136,5 +155,21 @@
     
         background-color: whitesmoke;
     }
- 
+
+        
+    .load_login{
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 80%;
+        height: 100%;
+        left: 10%;
+        padding: 100px 4px 100px 4px;
+        margin: 5px;
+        background-color: whitesmoke;
+        border-radius: 25px;
+    }
+    
 }
+

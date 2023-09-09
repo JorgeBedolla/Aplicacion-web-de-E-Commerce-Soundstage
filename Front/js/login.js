@@ -1,36 +1,82 @@
 
-
-
 function iniciarSesion(){
-    var inputUser = document.getElementById("userName");
-    var inputPass = document.getElementById("pass");
-    var user = inputUser.value;
-    var pass = inputPass.value;
-    var clientLogin = new WSClient(URL);
+    ocultarPantallaLogin();
+    desplegarPantallaLoginCarga();
 
-    clientLogin.postJson("iniciar_sesion",
-        {
-            "Usuario":user,
-            "Contrasena":pass
-        },
-        function(code, result){
-            if(code == 200){
-                crearCookieSesion(result);
-                if(result["status"]==1){
-                    seleccionarInstrumentos();
-                    window.location.href = 'ad.html';
-                }else{
-                    desplegarMenuPrincipal();
-                }   
-            }    
-            else{
-                desplegarErrorMesage(result["message"])
-            }
+    comprobarCredenciales().then(data =>{
+        crearCookieSesion(data);
+        ocultarPantallaLoginCarga();
+        if(data["status"] == 1){
+            seleccionarInstrumentos();
+            window.location.href = 'ad.html';
+        }else{
+            desplegarMenuPrincipal();
         }
-    );
+    }).catch(error =>{
+        desplegarErrorMesage(error);
+        desplegarPantallaLogin();
+        ocultarPantallaLoginCarga();
+    })
 
-    inputUser.value = "";
-    inputPass.value = "";
+
+}
+
+function desplegarPantallaLoginCarga(){
+    var cuadro_carga_login = document.querySelector(".load_login");
+    cuadro_carga_login.classList.remove("hide");
+}
+
+function desplegarPantallaLogin(){
+    var cuadro_login = document.querySelector(".login");
+    cuadro_login.classList.remove("hide");
+}
+
+function ocultarPantallaLogin(){
+    var cuadro_login = document.querySelector(".login");
+    cuadro_login.classList.add("hide");
+}
+
+function ocultarPantallaLoginCarga(){
+    var cuadro_carga_login = document.querySelector(".load_login");
+    cuadro_carga_login.classList.add("hide")
+}
+
+function comprobarCredenciales(){
+
+    return new Promise((resolve, reject)=>{
+        var inputUser = document.getElementById("userName");
+        var inputPass = document.getElementById("pass");
+        var user = inputUser.value;
+        var pass = inputPass.value;
+        var clientLogin = new WSClient(URL);
+        inputUser.value = "";
+        inputPass.value = "";
+
+        clientLogin.postJson("iniciar_sesion",
+            {
+                "Usuario":user,
+                "Contrasena":pass
+            },
+            function(code, result){
+                if(code == 200){
+                    /*
+                    crearCookieSesion(result);
+                    if(result["status"]==1){
+                        seleccionarInstrumentos();
+                        window.location.href = 'ad.html';
+                    }else{
+                        desplegarMenuPrincipal();
+                    }   */
+                    resolve(result);
+                }    
+                else{
+                    reject(result["message"]);
+                }
+            }
+        );
+
+        
+    });
 }
 
 function crearCookieSesion(jsonCookie){
