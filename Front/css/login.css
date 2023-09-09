@@ -1,0 +1,140 @@
+.loginTitle{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+    align-items: center;
+    text-align: center;
+    
+}
+
+#redLogo{
+    display: inline;
+    color: red;
+}
+
+.loginTitle h1{
+    position: relative;
+    text-align: center;
+    font-family: 'Cedarville Cursive',cursive;
+    font-size: 50px;
+    user-select: none;
+}
+
+.login{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    height: 100%;
+    left: 35%;
+    padding: 5px;
+    margin: 5px;
+
+    background-color: whitesmoke;
+
+    border-radius: 25px;
+
+
+}
+
+.logBox{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 4px;
+    left: 5%;
+    width: 90%;
+    height: 100%;
+    
+}
+  
+.logBox input{
+    display: flex;
+    left: 0%;
+    width: 100%;
+    margin: 5px 0px 25px 0px;
+    padding: 5px;
+}
+
+.login img{
+    height: 30%;
+    width: 30%;
+    padding: 5px 0px 5px 0px;
+    margin: 5px 5px 25px 5px;
+    animation: rotate 15s linear infinite;
+    user-select: none;
+}
+
+.login label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin: 5px;
+    font-weight: bold;
+}
+
+.loginButton{
+    position: relative;
+    background-color: red;
+    color: white;
+    border: solid 2px red;
+    border-radius: 5px;
+    width: 60%;
+    left: 0%;
+    height: 10%;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    margin: 5px;
+}
+
+.loginButton:hover{
+    position: relative;
+    background-color: whitesmoke;
+    color: red;
+    border: solid 2px red;
+    border-radius: 5px;
+    width: 60%;
+    left: 0%;
+    height: 10%;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    margin: 5px;
+}
+
+
+
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+@media(max-width: 720px){
+
+    .login{
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 80%;
+        height: 100%;
+        left: 10%;
+        top: 90px;
+        padding: 5px;
+        margin: 5px;
+    
+        background-color: whitesmoke;
+    }
+ 
+}

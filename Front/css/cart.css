@@ -1,0 +1,276 @@
+.cart{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    width: 95%;
+    left: 2.5%;
+    height:100%;
+    top: 0%;
+}
+
+.cartTitle{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 25%;
+    background-color: whitesmoke;
+    align-items: left;
+    border-bottom: solid black;
+    align-items: center;
+}
+
+.cartTitle h1{
+    text-align: center;
+    position: relative;
+    font-family: 'Cedarville Cursive',cursive;
+    font-size: 50px;
+
+}
+
+.backButtonShop{
+    border: solid 1px gray;
+    border-radius: 4px;
+    background-color: whitesmoke;
+    margin: 2px;
+    padding: 1px;
+}
+
+.backButtonShop:hover{
+    border: solid 1px gray;
+    border-radius: 4px;
+    background-color: red;
+    margin: 2px;
+    padding: 1px;
+}
+
+.productoC{
+    margin: 2px;
+    padding: 3px;
+    display: flex;
+    flex-direction: row;
+    border: solid 1px gray;
+}
+
+.productoC img{
+    width: 20%;
+    min-height: 20%;
+}
+
+.productoDatosC{
+    padding-left: 30px;
+    width: 60%;
+    font-family: Arial, Helvetica, sans-serif;  
+}
+
+.productoDatosC h3{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.productoDatosC p{
+    font-size: 20px;
+}
+
+
+.productActionC{
+    width: 19%;
+    border-left: solid 1px gray;
+    padding-left: 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.productActionC .button{
+    position: relative;
+    width: 100%;
+}
+
+.addButton{
+    margin: 2px;
+    border: solid 1px green;
+    border-radius: 10px;
+    min-height: calc(95%/3);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: green;
+    font-weight: bold;
+    background-color: whitesmoke;
+    overflow: hidden;
+}
+
+.dicreaseButton{
+    margin: 2px;
+    border: solid 1px red;
+    border-radius: 10px;
+    min-height: calc(95%/3);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+    background-color: whitesmoke;
+    overflow: hidden;
+
+}
+
+.deleteArticleButton{
+    margin: 2px;
+    border: solid 1px red;
+    border-radius: 10px;
+    min-height: calc(95%/3);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+    background-color: whitesmoke;
+    overflow: hidden;
+}
+
+.addButton:hover{
+    margin: 2px;
+    border: solid 1px green;
+    border-radius: 10px;
+    min-height: calc(95%/3);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: whitesmoke;
+    font-weight: bold;
+    background-color: green;
+    overflow: hidden;
+}
+
+.dicreaseButton:hover{
+    margin: 2px;
+    border: solid 1px red;
+    border-radius: 10px;
+    min-height: calc(95%/3);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: whitesmoke;
+    font-weight: bold;
+    background-color: red;
+    overflow: hidden;
+
+}
+
+.deleteArticleButton:hover{
+    margin: 2px;
+    border: solid 1px red;
+    border-radius: 10px;
+    min-height: calc(95%/3);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: whitesmoke;
+    font-weight: bold;
+    background-color: red;
+    overflow: hidden;
+}
+
+.carritoFinal{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.montoBox{
+    height: 100%;
+    width: 50%;
+}
+
+.montoBox h2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 37px;
+    margin-left: 30px;
+}
+
+.operacionesCarritoFinal{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+
+.botonPagarCarrito{
+    height: 100%;
+    width: 50%;
+    font-size: 20px;
+    margin: 2px;
+    border: solid 2px green;
+    border-radius: 10px;
+    background-color: green;
+    font-weight: bold;
+    color: whitesmoke;
+
+}
+
+.botonEliminarCarrito{
+    height: 100%;
+    width: 50%;
+    font-size: 20px;
+    margin: 2px;
+    border: solid 2px red;
+    border-radius: 10px;
+    background-color:red;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.botonPagarCarrito:hover{
+    height: 100%;
+    width: 50%;
+    font-size: 20px;
+    margin: 2px;
+    border: solid 3px green;
+    border-radius: 10px;
+    background-color: whitesmoke;
+    font-weight: bold;
+    color: green;
+
+}
+
+.botonEliminarCarrito:hover{
+    height: 100%;
+    width: 50%;
+    font-size: 20px;
+    margin: 2px;
+    border: solid 3px red;
+    border-radius: 10px;
+    background-color:whitesmoke;
+    font-weight: bold;
+    color: red;
+}
+
+.botonPagarCarrito:active{
+    height: 100%;
+    width: 50%;
+    font-size: 20px;
+    margin: 2px;
+    border: solid 1px black;
+    border-radius: 10px;
+    background-color: black;
+    font-weight: bold;
+    color: whitesmoke;
+
+}
+
+.botonEliminarCarrito:active{
+    height: 100%;
+    width: 50%;
+    font-size: 20px;
+    margin: 2px;
+    border: solid 2px black;
+    border-radius: 10px;
+    background-color:black;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.SinArticulosCarrito{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    text-align: center;
+}

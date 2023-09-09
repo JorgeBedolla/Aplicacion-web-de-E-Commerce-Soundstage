@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundStage Shop</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cedarville+Cursive">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/mesages.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="img/vinil.png" type="image/png">
+    
+
+</head>
+<body class="back">
+    <div class="loginTitle">
+        <h1>Sound<div id="redLogo">Stage</div> shop</h1>
+    </div>
+
+    <div class="login">
+        <div class="logBox">
+            <img src="img/vinil.png" alt="">
+            <form>
+                
+                <label for="userName">Nombre de usuario:</label>
+                <input id="userName" name="userName" type="text">
+                <label for="pass">Contraseña: </label>
+                <input type="password" name="pass" id="pass">                
+            </form>
+            <button class="loginButton" onclick="iniciarSesion()">Iniciar Sesi&oacute;n</button>  
+    </div>
+    </div>
+
+
+    <div class="shop hide">
+        <div class="shopTitle">
+            <h1>Sound<div id="redLogo">Stage</div> Shop</h1>
+            <div class="buttonMenuBar">
+                <div class="functionMenu">
+                    <button class="logoutButton" onclick="cerrarSesion()">
+                        <img class="iconMenu" src="img/logout.ico" alt="logout">
+                    </button>
+                    <button class="cartButton" onclick="desplegarCarrito()">
+                        <img class="iconMenu" src="img/cart.ico" alt="cart">
+                    </button>
+                </div>
+                
+                <div class="OptionsBarShop">
+                    <div class="ButtonInstruments selected" onclick="seleccionarInstrumentos()">Instrumentos</div>
+                    <div class="ButtonDisc" onclick="seleccionarDiscos()">Discos</div>
+                    <div class="sectionSearch" onclick="seleccionarBuscar()">Buscar</div>
+
+                </div>
+              
+            </div>
+        </div>
+        <h3 class="tituloSeccion">Instrumentos</h3>
+        <div class="searchBar hide">
+            <input type="text" id="barraBusqueda">
+            <button id="buttonBusqueda" onclick="buscarArticulo()"><img src="img/search.png" alt="iconSearch"></button>
+        </div>
+        <div class="results">
+        
+        </div>
+
+        <div class="descripcionMenu hide">
+            <div class="descripcionImagen">
+                <img src="img/image.png" alt="AlbumPhoto">
+            </div>
+            <div class="descripcionDatos">
+                <h3>NOMBRE DISCO</h3>
+                <p><b>Autor: </b></p>
+                <p><b>Año: </b></p>
+                <p><b>Duraci&oacute;n:</b> # minutos</p>
+                <p><b>Precio:</b>$</p>
+                <p id="descripcionAlbum"><b>Descripci&oacute;n:</b>Descripcion del album</p>
+                <div class="descripcionButtonCantidad">
+                    <label for="cantidad">Cantidad:</label>
+                    <input type="number" min="1" name="cantidad" id="cantidad" value="1">
+                </div>
+                <div class="descripcionButtons">
+                    <button class="addButton">Añadir al carrito</button>
+                    <button class="closeButton" onclick="cerrarDescripcion()">Cerrar</button>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+
+    <div class="cart hide">
+        <div class="cartTitle">
+            <h1>Carrito de compra</h1>
+            <div class="buttonMenuBar">
+                <div class="functionMenu">
+                        <button class="logoutButton" onclick="cerrarSesionCarrito()">
+                            <img class="iconMenu" src="img/logout.ico" alt="logout">
+                        </button>
+                        <button class="backButtonShop" onclick="volverTienda()">
+                            <img class="iconMenu" src="img/back.ico" alt="cart">
+                        </button>
+                </div>              
+            </div>
+        </div>
+        <div class="articulosCarrito">
+        </div>
+    </div>
+
+    <div class="alertMesaggeWindow hide">
+        <img src="img/alert.png" alt="Advertencia">
+        <h3>Se han añadido correctamente</h3>
+        <button onclick="cerrarAlertMessage()">Aceptar</button>
+
+    </div>
+
+    <div class="confirmMesaggeWindow hide">
+        <img src="img/question.png" alt="Advertencia">
+        <h3>¿Esta seguro de que deseas?</h3>
+        <div class="confirmMessageButtons">
+            <button id="yesButton">Si</button>
+            <button id="noButton">No</button>
+        </div>
+    </div>
+  
+    <div class="errorMesaggeWindow hide">
+        <img src="img/error.png" alt="Advertencia">
+        <h3>Se han añadido correctamente</h3>
+        <button onclick="cerrarErrorMesage()">Aceptar</button>
+    </div>
+  
+    <script src="js/mainConf.js"></script>
+    <script src="js/WSClient.js"></script>
+    <script src="js/mesagges.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/shop.js"></script>
+    <script src="js/cart.js"></script>
+    
+</body>
+</html>

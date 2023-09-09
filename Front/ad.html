@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundStage Admin</title>
+    <link rel="icon" href="img/vinil.png" type="image/png">
+    <link rel="stylesheet" href="css/cssAdmin/admin.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cedarville+Cursive">
+    
+
+</head>
+<body  onload="validarCookie()">
+    <div class="adminPanel">
+        <div class="adTitleD">
+            <h1>SoundStage Admin</h1>
+            <div class="buttonMenuBar">
+                <div class="functionMenu">
+                    <button class="logoutButton" onclick="cerrarSesion()">
+                        <img class="iconMenu" src="img/logout.ico" alt="logout">
+                    </button>
+                </div>
+                
+                <div class="OptionsBarShop">
+                    <div class="ButtonInv" onclick="seleccionarInventario()">Inventario</div>
+                    <div class="ButtonReg selected" onclick="seleccionarRegistrar()">Registrar articulo</div>
+                    <div class="sectionVen" onclick="seleccionarVentas()">Ver ventas</div>
+
+                </div>
+              
+            </div>
+        </div>
+
+        <div class="inventario hide">
+            <h2>Inventario</h2>
+            <div class="buscarInventario">
+                <input type="text" name="textoBusquedaInv" id="textoBusquedaInv">
+                <button class="buscarInvBoton" onclick="buscarArticuloInventario()">Buscar</button>
+            </div>
+            <h3>
+                Discos
+            </h3>
+                <table class="discosTable">
+                    <tr>
+                        <th id="colNombreD">Nombre</th>
+                        <th id="colAutor">Autor</th>
+                        <th id="colAno">Año</th>
+                        <th id="colDur">Duraci&oacute;n</th>
+                        <th id="colDesc">Descripci&oacute;n</th>
+                        <th id="colPre">Precio</th>
+                        <th id="colStock">Stock</th>
+                    </tr>
+                </table>
+            <h3>
+                Instrumentos
+            </h3>
+                <table class="instrumentosTable">
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Descripci&oacute;n</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                    </tr>
+                </table>
+        </div>
+
+        <div class="registrarPa">
+            <h2>Registrar Producto</h2>
+            <div class="formOptionMenu">
+                <input type="radio" id="instrumento" name="opcion" value="1" onclick="seleccionarRegistrarInstrumento()" checked>
+                <label for="instrumento">Instrumento</label>
+                <input type="radio" id="disco" name="opcion" value="0" onclick="seleccionarRegistrarDisco()">
+                <label for="disco">Disco</label>
+            
+            </div>
+            <div class="formularioRegistro">
+                <label for="name">Nombre</label>
+                <input type="text" name="name" id="name" class="campoEntrada">
+                <div class="camposDisco hide">
+                    <label for="autor">Autor</label>
+                    <input type="text" name="autor" id="autor"  class="campoEntrada">
+                    <label for="year">Año</label>
+                    <input type="number" name="year" id="year" min="1000" max="2023" step="1" value="2023"  class="campoEntrada">
+                    <label for="duracion">Duraci&oacute;n</label>
+                    <input type="text" name="duracion" id="duracion"  class="campoEntrada">
+                </div>
+                <label for="descripcion">Descripci&oacute;n</label>
+                <textarea id="descripcion" name="descripcion" rows="4" cols="50"></textarea>
+                <label for="precio">Precio</label>
+                <input type="text" name="precio" id="precio"  class="campoEntrada">
+                <label for="stock">Stock</label>
+                <input type="number" name="stock" id="stock"  class="campoEntrada">
+                <img src="img/imgAdmin/image.png" alt="imagen pre" id="imagenPre">
+                <input type="file" name="imagen" id="imagen" onchange="seleccionarImagen(files, document.getElementById('imagenPre'))" multiple="false"  accept="image/*">
+                <button onclick="quita_foto()">Quitar imagen</button>
+                <button onclick="resgistrarArticulo()">Guardar</button>
+            </div>
+                
+
+         
+        </div>
+
+        <div class="ventas hide">
+            <h2>Ventas</h2>
+            <div class="menuFechas">
+                <input type="radio" name="opcionFecha" id="todas" value="0" onclick="seleccionarTodasLasVentas()" checked>
+                <label for="todas">Ver todas las ventas</label>
+                <input type="radio" name="opcionFecha" id="fechaHoy" value="1" onclick="seleccionarVentasHoy()">
+                <label for="fechaHoy">Ver las ventas de hoy</label>
+                <input type="radio" name="opcionFecha" id="fechaSel" value="2" onclick="seleccionarFecha()">
+                <label for="fechaSel">Seleccionar fecha</label>
+            </div>
+
+            <div class="panelFecha hide">
+                <label for="fechaSeleccionada">Seleccionar fecha: </label>
+                <input type="date" name="fechaSeleccionada" id="fechaSeleccionada" onchange="buscarFecha()">
+            </div>
+
+            <table class="ventaTable">
+                <tr>
+                    <th id="colTipoV">Tipo</th>
+                    <th id="colNombreV">Nombre</th>
+                    <th id="colFechaV">Fecha</th>
+                    <th id="colPreV">Precio</th>
+                    <th id="colStockV">Cantidad</th>
+                    <th id="colImporte">Importe</th>
+                </tr>
+            </table>
+
+            <div class="divImporteTotalDia"></div>
+
+        </div>
+
+        <div class="alertMesaggeWindow hide">
+            <img src="img/alert.png" alt="Advertencia">
+            <h3>Se han añadido correctamente</h3>
+            <button onclick="cerrarAlertMessage()">Aceptar</button>
+    
+        </div>
+
+        <div class="registroExitosoWindow hide">
+            <img src="img/alert.png" alt="Advertencia">
+            <h3>Se han añadido correctamente</h3>
+            <button onclick=" cerrarRegistroExitosoMesage()">Aceptar</button>
+        </div>
+    
+        <div class="confirmMesaggeWindow hide">
+            <img src="img/question.png" alt="Advertencia">
+            <h3>¿Esta seguro de que deseas?</h3>
+            <div class="confirmMessageButtons">
+                <button id="yesButton">Si</button>
+                <button id="noButton">No</button>
+            </div>
+        </div>
+      
+        <div class="errorMesaggeWindow hide">
+            <img src="img/error.png" alt="Advertencia">
+            <h3>Se han añadido correctamente</h3>
+            <button onclick="cerrarErrorMesage()">Aceptar</button>
+        </div>
+
+        <script src="js/jsAdmin/WSAdmin.js"></script>
+        <script src="js/jsAdmin/adminPanel.js"></script>
+
+</body>
+</html>

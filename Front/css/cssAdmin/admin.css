@@ -1,0 +1,815 @@
+
+
+.back{
+    background-color: #23272a;
+    height: 100%;
+
+}
+
+.adminPanel{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    width: 95%;
+    left: 2.5%;
+    height:100%;
+    top: 0%;
+}
+
+.adTitleD{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 20%;
+    background-color: whitesmoke;
+    border-bottom: solid black;    
+}
+/*
+.adTitle h1{
+    position: relative;
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 60px;
+    left: 5%;
+    user-select: none;
+}*/
+
+.buttonMenuBar{
+    position: relative;
+    display: flex;
+    flex-direction:row-reverse;
+    align-items: flex-end;
+    right: 0;
+}
+
+.functionMenu{
+    width: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+}
+
+.OptionsBarShop{
+    width: 50%;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    padding-left: 4px;
+ }
+
+
+.logoutButton{
+    border: solid 1px gray;
+    border-radius: 4px;
+    background-color: whitesmoke;
+    margin: 2px;
+    padding: 1px;
+}
+
+.logoutButton:hover{
+    border: solid 1px whitesmoke;
+    border-radius: 4px;
+    background-color:red;
+    margin: 2px;
+    padding: 1px;
+}
+
+.cartButton{
+    border: solid 1px gray;
+    border-radius: 4px;
+    background-color: whitesmoke;
+    margin: 2px;
+    padding: 1px;
+
+}
+
+.cartButton:hover{
+    border: solid 1px whitesmoke;
+    border-radius: 4px;
+    background-color: green;
+    margin: 2px;
+    padding: 1px;
+
+}
+.iconMenu{
+    width: 20px;
+    height: 20px;
+}
+
+.ButtonInv{
+    border: solid 1px black;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 2px;
+    border-bottom: none;
+    width: auto;
+    height: 100%;
+    padding: 3px;
+    margin-right: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    user-select: none;
+    cursor: pointer;
+}
+
+.ButtonReg{
+    border: solid 1px black;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 2px;
+    border-bottom: none;
+    width: auto;
+    height: 100%;
+    padding: 3px;
+    margin-left: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    user-select: none;
+    cursor: pointer;
+}
+
+.sectionVen{
+    border: solid 1px black;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 2px;
+    border-bottom: none;
+    width: auto;
+    height: 100%;
+    padding: 3px;
+    margin-left: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    user-select: none;
+    cursor: pointer;
+}
+
+
+
+.selected{
+    border: solid 1px black;
+    background-color: black;
+    color: whitesmoke;
+    border-radius: 2px;
+    border-bottom: none;
+    width: auto;
+    height: 100%;
+    padding: 3px;
+    margin-left: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+
+
+}
+.results{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.product{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 1px gray;
+    border-radius: 5px;
+    width: calc(95%/4);
+    min-height: 30%;
+    padding: 3px;
+    margin: 3px;
+    overflow: hidden;
+}
+.titleProduct{
+    display: inline;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.Price{
+    display: inline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.product img{
+    padding: 0px;
+    margin: 0px;
+    width: 50%;
+    height: 50%;
+    left: 4px;
+    top: 4px
+}
+
+.product:hover{
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.searchBar{
+    display: flex;
+    position: relative;
+    margin: 2px;
+    padding: 4px;
+    width: 95%;
+    left: 2.5%;
+    height: 15%;
+
+}
+
+#barraBusqueda{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 30%;
+}
+
+#buttonBusqueda{
+    position: relative;
+    display: flex;
+    height: auto;
+    width: 30px;
+    background-color: whitesmoke;
+    border: solid 1px gray;
+    border-radius: 2px;
+    margin-left: 4px;
+}
+
+#buttonBusqueda:hover{
+    position: relative;
+    display: flex;
+    height: auto;
+    width: 30px;
+    background-color: whitesmoke;
+    border: solid 1px red;
+    border-radius: 3px;
+    margin-left: 4px;
+}
+
+#buttonBusqueda img{
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.inventario h2{
+    font-family: 'Cedarville Cursive',cursive;
+    font-size: 35px;
+}
+
+.registrarPa h2{
+    font-family: 'Cedarville Cursive',cursive;
+    font-size: 35px;
+}
+
+.ventas h2{
+    font-family: 'Cedarville Cursive',cursive;
+    font-size: 35px;
+}
+
+.inventario h3{
+    font-family: 'Cedarville Cursive',cursive;
+    font-size: 25px;
+}
+
+.registrarPa h3{
+    font-family: 'Cedarville Cursive',cursive;
+    font-size: 25px;
+}
+
+.ventas h3{
+    
+    font-size: 25px;
+}
+
+table{
+    font-family: Arial, Helvetica, sans-serif;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+td{
+
+    background-color: whitesmoke;
+    overflow:hidden;
+}
+
+.discosTable tr{
+    border: gray solid 1px;
+
+}
+
+.discosTable th{
+    border: solid 1px gray;
+    background-color: black;
+    color:whitesmoke;
+    overflow:hidden;
+}
+
+.descripcionDisc{
+    text-align: justify;
+    margin: 2px;
+    padding: 2px;
+}
+
+#colNombreD{
+    width: 10%;
+}
+
+#colAutor{
+    width: 10%;
+}
+
+#colAno{
+    width: 10%;
+}
+#colDur{
+    width: 10%;
+}
+#colDesc{
+    width: 30%;
+}
+#colPre{
+    width: 15%;
+}
+#colStock{
+    width: 15%;
+}
+
+.instrumentosTable tr{
+    border: gray solid 1px;
+
+}
+
+.instrumentosTable th{
+    border: solid 1px gray;
+    background-color: black;
+    color:whitesmoke;
+}
+
+.descrIntrumentos{
+    text-align: justify;
+    margin: 2px;
+    padding: 2px;
+}
+
+.buscarInventario{
+    display: flex;
+    flex-direction: row;
+}
+
+#textoBusquedaInv{
+    border: solid 1px black;
+    border-radius: 4px;
+
+}
+
+.buscarInvBoton{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    display: flex;
+    margin-left: 5px;
+    background-color: black;
+    border: solid 1px black;
+    color: whitesmoke;
+    border-radius: 4px;
+}
+
+.buscarInvBoton:hover{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    display: flex;
+    margin-left: 5px;
+    background-color: red;
+    border: solid 1px red;
+    color: whitesmoke;
+    border-radius: 4px;
+}
+
+.formOptionMenu{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+
+}
+
+.formularioRegistro{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    left: 40%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.formularioRegistro label{
+    font-size: 18px;
+    margin: 2px;
+    padding: 2px;
+ 
+}
+
+.formularioRegistro button{
+    padding: 4px;
+    margin: 4px;
+}
+
+
+#imagenPre{
+    width: 100px;
+    margin: 6px;
+}
+
+.camposDisco{
+    position: relative;
+    display: flex;
+    flex-direction: column;  
+}
+
+.campoEntrada{
+    border: solid 1px grey;
+    border-radius: 5px;
+    height: 22px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+#descripcion{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+
+
+
+
+
+/*
+.ventaTable{
+}*/
+
+#colTipoV{
+    width: 15%;
+}
+#colNombreV{
+    width: 15%;
+}
+
+#colFechaV{
+    width: 20%;
+}
+#colPreV{
+    width: 15%;
+}
+#colStockV{
+    width: 15%;
+}
+#colImporte{
+    width: 20%;
+}
+
+.ventaTable tr{
+    border: gray solid 1px;
+
+}
+
+.ventaTable th{
+    border: solid 1px gray;
+    background-color: black;
+    color:whitesmoke;
+    overflow:hidden;
+}
+
+.menuFechas{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 2px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.menuFechas input{
+    margin-left: 10px;
+}
+
+.panelFecha{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.panelFecha input{
+    margin-left: 10px;
+}
+.buscarFechaBoton{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    display: flex;
+    margin-left: 5px;
+    background-color: black;
+    border: solid 1px black;
+    color: whitesmoke;
+    border-radius: 4px;
+}
+
+.buscarFechaBoton:hover{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    display: flex;
+    margin-left: 5px;
+    background-color: red;
+    border: solid 1px red;
+    color: whitesmoke;
+    border-radius: 4px;
+}
+
+
+@media(max-width: 720px){
+ 
+    .formularioRegistro{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        left: 10%;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+}
+
+
+
+/*Notificacion o alerta */
+.alertMesaggeWindow{
+    position:fixed;
+    top: 20%;
+    z-index: 9999;
+    height: 70%;
+    width: 40%;
+    left: 30%;
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px green;
+    border-radius: 20px;
+    align-items: center;
+}
+.alertMesaggeWindow img{
+    display: flex;
+    position: relative;
+    width: 30%;
+    height: auto;
+}
+.alertMesaggeWindow h3{
+    font-size: 25px;
+    overflow: hidden;
+}
+
+.alertMesaggeWindow button{
+    font-size: 20px;
+    width: 25%;
+    height: 8%;
+    border-radius: 5px;
+    background-color: green;
+    border: solid 1px green;
+    font-weight: bold;
+    color: whitesmoke;
+    overflow: hidden;
+}
+
+.alertMesaggeWindow button:hover{
+    font-size: 21px;
+    width: 25%;
+    height: 8%;
+    border-radius: 6px;
+    background-color: whitesmoke;
+    border: solid 1px green;
+    font-weight: bold;
+    color: green;
+    overflow: hidden;
+}
+
+/*Confirmacion */
+
+.confirmMesaggeWindow{
+    position:fixed;
+    top: 20%;
+    z-index: 9999;
+    height: 70%;
+    width: 40%;
+    left: 30%;
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px rgb(0, 32, 96);
+    border-radius: 20px;
+    align-items: center;
+}
+
+.confirmMesaggeWindow img{
+    display: flex;
+    position: relative;
+    width: 30%;
+    height: auto;
+}
+.confirmMesaggeWindow h3{
+    font-size: 25px;
+    overflow: hidden;
+}
+
+.confirmMessageButtons{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 8%;
+    padding-left: 45%;
+}
+
+.confirmMessageButtons button{
+    position: relative;
+    display: flex;
+    width: 25%;
+    height: 100%;
+    font-weight: bold;
+    overflow: hidden;
+    font-size: 15px;
+    padding-left: 10%;
+    align-items: center;
+    text-align: center;
+    margin: 1px;
+    
+}
+
+#yesButton{
+    background-color: whitesmoke;
+    border: solid 2px green;
+    color: green;
+}
+
+#noButton{
+    background-color: whitesmoke;
+    border: solid 2px red;
+    color: red;
+
+}
+
+#yesButton:hover{
+    background-color: green;
+    border: solid 2px green;
+    color: whitesmoke;
+}
+
+#noButton:hover{
+    background-color: red;
+    border: solid 2px red;
+    color: whitesmoke;
+
+}
+
+/* VENTANA ERROR */
+
+.errorMesaggeWindow{
+    position:fixed;
+    top: 20%;
+    z-index: 9999;
+    height: 70%;
+    width: 40%;
+    left: 30%;
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px red;
+    border-radius: 20px;
+    align-items: center;
+}
+.errorMesaggeWindow img{
+    display: flex;
+    position: relative;
+    width: 30%;
+    height: auto;
+}
+.errorMesaggeWindow h3{
+    font-size: 25px;
+    overflow: hidden;
+}
+
+.errorMesaggeWindow button{
+    font-size: 20px;
+    width: 25%;
+    height: 8%;
+    border-radius: 5px;
+    background-color: red;
+    border: solid 1px red;
+    font-weight: bold;
+    color: whitesmoke;
+    overflow: hidden;
+}
+
+.errorMesaggeWindow button:hover{
+    font-size: 21px;
+    width: 25%;
+    height: 8%;
+    border-radius: 6px;
+    background-color: whitesmoke;
+    border: solid 1px red;
+    font-weight: bold;
+    color: red;
+    overflow: hidden;
+}
+
+
+/*REGISTRO EXITOSO */
+.registroExitosoWindow{
+    position:fixed;
+    top: 20%;
+    z-index: 9999;
+    height: 70%;
+    width: 40%;
+    left: 30%;
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px green;
+    border-radius: 20px;
+    align-items: center;
+}
+.registroExitosoWindow img{
+    display: flex;
+    position: relative;
+    width: 30%;
+    height: auto;
+}
+.registroExitosoWindow h3{
+    font-size: 25px;
+    overflow: hidden;
+}
+
+.registroExitosoWindow button{
+    font-size: 20px;
+    width: 25%;
+    height: 8%;
+    border-radius: 5px;
+    background-color: green;
+    border: solid 1px green;
+    font-weight: bold;
+    color: whitesmoke;
+    overflow: hidden;
+}
+
+.registroExitosoWindow button:hover{
+    font-size: 21px;
+    width: 25%;
+    height: 8%;
+    border-radius: 6px;
+    background-color: whitesmoke;
+    border: solid 1px green;
+    font-weight: bold;
+    color: green;
+    overflow: hidden;
+}
+
+.divImporteTotalDia{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.divImporteTotalDia h3{
+ 
+    font-size:30px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: end;
+
+}
+
+
+h1{
+    font-family: 'Cedarville Cursive', cursive;
+}
+
+.hide{
+    display: none;
+}
+

@@ -1,0 +1,334 @@
+/* -DESCRIPCION*/
+
+.descripcionMenu{
+    position: fixed;
+    flex-direction: row;
+    z-index: 9999;
+    display: flex;
+    top: 5%;
+    left: 10%;
+    width: 80%;
+    height: 90%;
+    background-color: whitesmoke;
+    border: solid 1px gray;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.descripcionImagen{
+    position: relative;
+    display: flex;
+    width: 50%;
+    height: 100%;
+
+}
+
+.descripcionImagen img{
+    position: relative;
+    display: flex;
+    width: 90%;
+    height: 90%;
+    left: 5%;
+    top: 5%;
+
+}
+
+.descripcionDatos{
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    display: flex;
+    
+    flex-direction: column;
+    width: 50%;
+
+    padding-left: 25px;
+
+}
+
+.descripcionDatos h3{
+   font-size: 35px;
+   overflow: visible;
+
+}
+
+.descripcionDatos p{
+    display: inline;
+    font-size: 15px;
+    overflow: visible;
+    padding: 1px;
+}
+
+.descripcionButtons{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin: 4px;
+    padding: 2px;
+    height: 10%;
+
+}
+
+.descripcionButtonCantidad{
+    display: flex;
+    flex-direction: column;
+    margin: 4px;
+    padding: 2px;
+    width: 20%;
+    height: 10%;
+    padding: 2px;
+
+}
+
+.descripcionButtons button{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    width: 60%;
+    height: 100%;
+}
+
+.descripcionButtonCantidad input{
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  width: 100%;
+}
+
+.descripcionButtonCantidad label{
+  font-size: 15px;
+}
+
+#descripcionAlbum{
+    overflow: scroll;
+}
+
+.closeButton{
+    margin: 2px;
+    border: solid 1px red;
+    border-radius: 10px;
+    min-height: calc(95%/3);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+    background-color: whitesmoke;
+    overflow: hidden;
+
+}
+
+.closeButton:hover{
+    margin: 2px;
+    border: solid 1px red;
+    border-radius: 10px;
+    min-height: calc(95%/3);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: whitesmoke;
+    font-weight: bold;
+    background-color: red;
+    overflow: hidden;
+}
+/*Notificacion o alerta */
+.alertMesaggeWindow{
+    position:fixed;
+    top: 20%;
+    z-index: 9999;
+    height: 70%;
+    width: 40%;
+    left: 30%;
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px green;
+    border-radius: 20px;
+    align-items: center;
+}
+.alertMesaggeWindow img{
+    display: flex;
+    position: relative;
+    width: 30%;
+    height: auto;
+}
+.alertMesaggeWindow h3{
+    font-size: 25px;
+    overflow: hidden;
+}
+
+.alertMesaggeWindow button{
+    font-size: 20px;
+    width: 25%;
+    height: 8%;
+    border-radius: 5px;
+    background-color: green;
+    border: solid 1px green;
+    font-weight: bold;
+    color: whitesmoke;
+    overflow: hidden;
+}
+
+.alertMesaggeWindow button:hover{
+    font-size: 21px;
+    width: 25%;
+    height: 8%;
+    border-radius: 6px;
+    background-color: whitesmoke;
+    border: solid 1px green;
+    font-weight: bold;
+    color: green;
+    overflow: hidden;
+}
+
+/*Confirmacion */
+
+.confirmMesaggeWindow{
+    position:fixed;
+    top: 20%;
+    z-index: 9999;
+    height: 70%;
+    width: 40%;
+    left: 30%;
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px rgb(0, 32, 96);
+    border-radius: 20px;
+    align-items: center;
+}
+
+.confirmMesaggeWindow img{
+    display: flex;
+    position: relative;
+    width: 30%;
+    height: auto;
+}
+.confirmMesaggeWindow h3{
+    font-size: 25px;
+    overflow: hidden;
+}
+
+.confirmMessageButtons{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 8%;
+    padding-left: 45%;
+}
+
+.confirmMessageButtons button{
+    position: relative;
+    display: flex;
+    width: 25%;
+    height: 100%;
+    font-weight: bold;
+    overflow: hidden;
+    font-size: 15px;
+    padding-left: 10%;
+    align-items: center;
+    text-align: center;
+    margin: 1px;
+    
+}
+
+#yesButton{
+    background-color: whitesmoke;
+    border: solid 2px green;
+    color: green;
+}
+
+#noButton{
+    background-color: whitesmoke;
+    border: solid 2px red;
+    color: red;
+
+}
+
+#yesButton:hover{
+    background-color: green;
+    border: solid 2px green;
+    color: whitesmoke;
+}
+
+#noButton:hover{
+    background-color: red;
+    border: solid 2px red;
+    color: whitesmoke;
+
+}
+
+/* VENTANA ERROR */
+
+.errorMesaggeWindow{
+    position:fixed;
+    top: 20%;
+    z-index: 9999;
+    height: 70%;
+    width: 40%;
+    left: 30%;
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    border: solid 2px red;
+    border-radius: 20px;
+    align-items: center;
+}
+.errorMesaggeWindow img{
+    display: flex;
+    position: relative;
+    width: 30%;
+    height: auto;
+}
+.errorMesaggeWindow h3{
+    font-size: 25px;
+    overflow: hidden;
+}
+
+.errorMesaggeWindow button{
+    font-size: 20px;
+    width: 25%;
+    height: 8%;
+    border-radius: 5px;
+    background-color: red;
+    border: solid 1px red;
+    font-weight: bold;
+    color: whitesmoke;
+    overflow: hidden;
+}
+
+.errorMesaggeWindow button:hover{
+    font-size: 21px;
+    width: 25%;
+    height: 8%;
+    border-radius: 6px;
+    background-color: whitesmoke;
+    border: solid 1px red;
+    font-weight: bold;
+    color: red;
+    overflow: hidden;
+}
+
+/*
+.confirmMesaggeWindow button{
+    font-size: 20px;
+    width: 25%;
+    height: 8%;
+    border-radius: 5px;
+    background-color: rgb(0, 32, 96);
+    border: solid 1px rgb(0, 32, 96);
+    font-weight: bold;
+    color: whitesmoke;
+    overflow: hidden;
+}
+
+.confirmMesaggeWindow button:hover{
+    font-size: 21px;
+    width: 25%;
+    height: 8%;
+    border-radius: 6px;
+    background-color: whitesmoke;
+    border: solid 1px rgb(0, 32, 96);
+    font-weight: bold;
+    color: rgb(0, 32, 96);
+    overflow: hidden;
+}*/

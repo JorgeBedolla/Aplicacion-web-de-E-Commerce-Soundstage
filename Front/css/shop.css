@@ -1,0 +1,282 @@
+.shop{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    width: 95%;
+    left: 2.5%;
+    height:100%;
+    top: 0%;
+}
+
+.shopTitle{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    height: 20%;
+    background-color: whitesmoke;
+    align-items: left;
+    border-bottom: solid red;
+
+    
+}
+
+.shopTitle h1{
+    position: relative;
+    font-family: 'Cedarville Cursive',cursive;
+    font-size: 60px;
+    left: 5%;
+    user-select: none;
+}
+.tituloSeccion{
+    position: relative;
+    font-family: 'Cedarville Cursive',cursive;
+    font-size: 35px;
+    left: 2%;
+    user-select: none;
+    color: black;
+}
+
+.buttonMenuBar{
+    position: relative;
+    display: flex;
+    flex-direction:row-reverse;
+    align-items: flex-end;
+    right: 0;
+}
+
+.functionMenu{
+    width: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+}
+
+.OptionsBarShop{
+    width: 50%;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    padding-left: 4px;
+ }
+
+
+.logoutButton{
+    border: solid 1px gray;
+    border-radius: 4px;
+    background-color: whitesmoke;
+    margin: 2px;
+    padding: 1px;
+}
+
+.logoutButton:hover{
+    border: solid 1px whitesmoke;
+    border-radius: 4px;
+    background-color:red;
+    margin: 2px;
+    padding: 1px;
+}
+
+.cartButton{
+    border: solid 1px gray;
+    border-radius: 4px;
+    background-color: whitesmoke;
+    margin: 2px;
+    padding: 1px;
+
+}
+
+.cartButton:hover{
+    border: solid 1px whitesmoke;
+    border-radius: 4px;
+    background-color: green;
+    margin: 2px;
+    padding: 1px;
+
+}
+.iconMenu{
+    width: 20px;
+    height: 20px;
+}
+
+.ButtonInstruments{
+    border: solid 1px red;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 2px;
+    border-bottom: none;
+    width: auto;
+    height: 100%;
+    padding: 3px;
+    margin-right: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    user-select: none;
+    cursor: pointer;
+}
+
+.ButtonDisc{
+    border: solid 1px red;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 2px;
+    border-bottom: none;
+    width: auto;
+    height: 100%;
+    padding: 3px;
+    margin-left: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    user-select: none;
+    cursor: pointer;
+}
+
+.sectionSearch{
+    border: solid 1px red;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 2px;
+    border-bottom: none;
+    width: auto;
+    height: 100%;
+    padding: 3px;
+    margin-left: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    user-select: none;
+    cursor: pointer;
+}
+
+
+
+.selected{
+    border: solid 1px red;
+    background-color: red;
+    color: whitesmoke;
+    border-radius: 2px;
+    border-bottom: none;
+    width: auto;
+    height: 100%;
+    padding: 3px;
+    margin-left: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+
+
+}
+.results{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.product{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid 1px gray;
+    border-radius: 5px;
+    width: calc(95%/4);
+    min-height: 30%;
+    padding: 3px;
+    margin: 3px;
+    overflow: hidden;
+}
+.titleProduct{
+    display: inline;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.Price{
+    display: inline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.product img{
+    padding: 0px;
+    margin: 0px;
+    width: 50%;
+    height: 50%;
+    left: 4px;
+    top: 4px
+}
+
+.product:hover{
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.searchBar{
+    display: flex;
+    position: relative;
+    margin: 2px;
+    padding: 4px;
+    width: 95%;
+    left: 2.5%;
+    height: 15%;
+
+}
+
+#barraBusqueda{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    display: flex;
+    position: relative;
+    height: 100%;
+    width: 30%;
+}
+
+#buttonBusqueda{
+    position: relative;
+    display: flex;
+    height: auto;
+    width: 30px;
+    background-color: whitesmoke;
+    border: solid 1px gray;
+    border-radius: 2px;
+    margin-left: 4px;
+}
+
+#buttonBusqueda:hover{
+    position: relative;
+    display: flex;
+    height: auto;
+    width: 30px;
+    background-color: whitesmoke;
+    border: solid 1px red;
+    border-radius: 3px;
+    margin-left: 4px;
+}
+
+#buttonBusqueda img{
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+@media(max-width: 1020px){
+    .product{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: calc(90%/3);
+        min-height: 30%;
+        left: 1%;
+        padding: 2px;
+        margin: 3px;
+
+        border: solid 1px gray;
+        border-radius: 5px;
+    }
+}
