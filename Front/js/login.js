@@ -97,5 +97,7 @@ function desplegarMenuPrincipal(){
     titleLogin.classList.add("hide");
     loginBox.classList.add("hide");
     shopBox.classList.remove("hide");
-    obtenerInstrumentos();
+    //obtenerInstrumentos();
+
+    seleccionarInstrumentos();
 }

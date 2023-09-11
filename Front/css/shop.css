@@ -1,3 +1,5 @@
+
+
 .shop{
     position: relative;
     display: flex;
@@ -264,6 +266,26 @@
     height: 100%;
     width: 100%;
 }
+
+#loadIco{
+    position: relative;
+    display: flex;
+    width: 4%;
+    left: 48%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    animation: rotate 0.7s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
 @media(max-width: 1020px){
     .product{
         position: relative;

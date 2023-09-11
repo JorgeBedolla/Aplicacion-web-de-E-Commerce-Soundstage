@@ -9,6 +9,17 @@ function cerrarSesion(){
     eliminarCookie("sesion");
 }
 
+function desplegarPantallaCargaShop(){
+    var panelResultados = document.querySelector(".results");
+    panelResultados.innerHTML="";
+    panelResultados.innerHTML='<img id="loadIco" src="img/load_ico.png" alt="Icono de carga">';
+}
+
+function ocultarPantallaCargaShop(){
+    var panelResultados = document.querySelector(".results");
+    panelResultados.innerHTML="";
+}
+
 function seleccionarInstrumentos(){
     validarCookieU()
     var botonSelInstru = document.querySelector(".ButtonInstruments");
@@ -17,8 +28,9 @@ function seleccionarInstrumentos(){
     botonSelInstru.classList.add("selected");
     botonSelDisc.classList.remove("selected");
     botonSelSearch.classList.remove("selected");
+    ocultarBarraBusqueda();
     generarTituloSeccion("Instrumentos");
-    
+    desplegarPantallaCargaShop();
     
     obtenerInstrumentos().then(data =>{
         ocultarBarraBusqueda();
@@ -30,7 +42,7 @@ function seleccionarInstrumentos(){
         }
 
     }).catch(error => {
-        desplegarErrorMesage();
+        desplegarErrorMesage(error);
     });
 }
 
@@ -42,6 +54,9 @@ function seleccionarDiscos(){
     botonSelInstru.classList.remove("selected");
     botonSelDisc.classList.add("selected");
     botonSelSearch.classList.remove("selected");
+    ocultarBarraBusqueda();
+    generarTituloSeccion("Discos");
+    desplegarPantallaCargaShop();
 
     obtenerDiscos()
   .then(data => {
@@ -54,13 +69,13 @@ function seleccionarDiscos(){
     for (id in data) {
       desplegarDiscos(data[id]);
     }
-    ocultarBarraBusqueda();
-    generarTituloSeccion("Discos");
+   
 
   })
   .catch(error => {
     // Manejo de errores
-    console.error(error);
+    //console.error(error);
+    desplegarErrorMesage(error)
   });
 
 
@@ -72,11 +87,14 @@ function seleccionarBuscar(){
     var botonSelInstru = document.querySelector(".ButtonInstruments");
     var botonSelDisc = document.querySelector(".ButtonDisc");
     var botonSelSearch = document.querySelector(".sectionSearch");
+    var panelResults = document.querySelector(".results");
     botonSelInstru.classList.remove("selected");
     botonSelDisc.classList.remove("selected");
     botonSelSearch.classList.add("selected");
     desplegarBarraBusqueda();
     generarTituloSeccion("Busqueda");
+    panelResults.innerHTML = "";
+
 }
 
 function desplegarBarraBusqueda(){
@@ -158,12 +176,13 @@ function obtenerInstrumentos() {
       },
       function(code, result) {
         if (code == 200) {
-          var panelResultados = document.querySelector(".results");
+          /*var panelResultados = document.querySelector(".results");
           panelResultados.innerHTML = ""; //Limpiamos el panel de resultados
 
           for (id in result) {
-            desplegarInstrumentos(result[id]);
-          }
+            //desplegarInstrumentos(result[id]);
+            alert(result[id])
+          }*/
           resolve(result); // Resolvemos la promesa con el resultado de la petición
         } else {
           reject(new Error("Ha ocurrido un error")); // Rechazamos la promesa en caso de error
@@ -356,7 +375,7 @@ function obtenerDiscos() {
             }*/
             resolve(result); // Resolvemos la promesa con el resultado de la petición
           } else {
-            reject(new Error("Ha ocurrido un error")); // Rechazamos la promesa en caso de error
+            reject("Ha ocurrido un error"); // Rechazamos la promesa en caso de error
           }
         });
     });
@@ -518,25 +537,46 @@ function cargarDatosDisco(nombreArticulo , jsonArticulo){
 
 function buscarArticulo(){
     var textoBusqueda = document.getElementById("barraBusqueda").value;
-    
-    var usuario = new WSClient(URL);
+    desplegarPantallaCargaShop();
 
-    usuario.postJson("buscar_articulo",
-    {"busqueda":textoBusqueda},
-    function(code, result){
-        if(code == 200){
-            
-            if(result.length == 0){
-                desplegarAlertMesage("No se encontraron resultados");
-            }else{
-                desplegarResultadosBusqueda(result);
-            }
-
+    realizarBusqueda(textoBusqueda).then(data =>{
+        if(data.length == 0){
+            desplegarAlertMesage("No se encontraron resultados");
+            ocultarPantallaCargaShop();
         }else{
-            desplegarErrorMesage("Ha ocurrido un error al realizar la busqueda");
+            desplegarResultadosBusqueda(data);
         }
-    }
-    );
+    }).catch(error => {
+        desplegarErrorMesage(error);
+        ocultarPantallaCargaShop();
+    })
+    
+}
+
+function realizarBusqueda(textoBusqueda){
+    return new Promise((resolve, reject)=>{
+        var usuario = new WSClient(URL);
+
+        usuario.postJson("buscar_articulo",
+        {"busqueda":textoBusqueda},
+        function(code, result){
+            if(code == 200){
+                /*
+                if(result.length == 0){
+                    desplegarAlertMesage("No se encontraron resultados");
+                }else{
+                    desplegarResultadosBusqueda(result);
+                }*/
+                resolve(result);
+            }else{
+                //desplegarErrorMesage("Ha ocurrido un error al realizar la busqueda");
+                reject("Ha ocurrido un error al realizar la busqueda");
+            }
+        }
+        );
+
+    });
+
 }
 
 function desplegarResultadosBusqueda(resultados){
