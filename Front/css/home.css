@@ -1,0 +1,24 @@
+body{
+    background-color: #23272a;
+}
+header{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.titulo{
+    color: white;
+    display: inline;
+    position: relative;
+    font-family: 'Cedarville Cursive',cursive;
+    font-size: 70px;
+    user-select: none;
+}
+
+.redLogo{
+    display: inline;
+
+}
