@@ -1,24 +1,469 @@
 body{
     background-color: #23272a;
+    
 }
+
+#loginButton{
+    position: absolute;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    top: 35%;
+    width: 10%;
+    height: 5%;
+    border: solid 1px red;
+    border-radius: 5px;
+    opacity: 0;
+}
+
+
 header{
     display: flex;
     width: 100%;
+    height: 30%;
+    top: 0;
     align-items: center;
     flex-direction: row;
     justify-content: center;
+    font-size: 1rem;
+    overflow: hidden;
 }
 
+footer{
+    font-family: 'Cedarville Cursive',cursive;
+    color: white;
+    font-size: 100px;
+    bottom: 0%;
+    font-size: 1.4rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+}
+
+
+
+.imagen_container{
+    display: flex;
+    left: 0%;
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 47%;
+    /*clip-path: polygon(50% 50%, 0 0, 100% 0);*/
+    overflow: hidden;
+}
+
+.imagen_container img{
+    position: absolute;
+    width: 100%;
+    
+    
+    filter: grayscale(100%);
+    animation: desplazamientoImagenTitulo 2.5s ease-in-out forwards;
+    overflow: hidden;
+}
+
+
 .titulo{
+    display: flex;
     color: white;
     display: inline;
-    position: relative;
+    position:relative;
     font-family: 'Cedarville Cursive',cursive;
-    font-size: 70px;
+    font-size: 6rem;
     user-select: none;
+    animation: desplazamientoTitulo 2s ease-in-out forwards;
+    top: 20%;
 }
+
+
+@keyframes desplazamientoTitulo {
+    0% {
+        opacity: 0;
+        transform: translateY(-170px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes desplazamientoImagenTitulo {
+    0% {
+        opacity: 0;
+        transform: translateY(370px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 .redLogo{
     display: inline;
+    color: red;
+
+}
+
+
+header:hover .redLogo{
+    color: white;
+}
+
+
+
+header:hover .imagen_container img{
+    animation: zoomImagen 5s forwards;
+}
+
+
+header:hover #loginButton{
+    animation: aparecerLoginBoton 2s forwards;
+}
+
+
+
+/*Continuacion*/
+
+.contenido{
+    position: relative;
+    top: 64%;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.disco{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: calc(100%/4);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow: hidden;
+    animation: animacionDespliegueDisco 1s forwards;
+
+}
+
+.disco img{
+    width: 100%;
+    height: 100%;
+}
+
+.disco h1{
+    position: absolute;
+    color: white;
+    bottom: 10%;
+    overflow: hidden;
+    font-size: 30px;
+    user-select: none;
+    opacity: 0;
+}
+
+.disco p{
+    position: absolute;
+    color: white;
+    bottom: 0;
+    overflow: hidden;
+    font-size: 20px;
+    text-align: left;
+    width: 100%;
+    user-select: none;
+    opacity: 0;
+    padding-left: 2px;
+
+}
+
+.disco:hover img{
+    animation: animacionImagenDisco 1s forwards;
+}
+
+
+.disco:hover h1{
+    animation: desplegarTituloDisco 1s forwards;
+
+}
+
+.disco:hover p{
+    animation: desplegarPrecioDisco 1.5s forwards;
+
+}
+
+#loginButton:hover{
+    animation: loginHoverBoton 1s forwards;
+}
+
+@keyframes loginHoverBoton{
+    0%{
+
+       color: white;
+       background-color: red;
+       border-color: red;
+       transform: translateX(0);
+
+    }
+    100%{
+        color: red;
+        background-color: white;
+        border-color: white;
+        transform: translateX(2px);
+    }
+}
+@keyframes aparecerLoginBoton{
+    0%{
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes desplegarTituloDisco{
+    0%{
+
+        transform: translateX(-40px);
+        opacity: 0;
+
+    }
+    100%{
+
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes desplegarPrecioDisco{
+    0%{
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(2px);
+        opacity: 1;
+    }
+}
+
+
+@keyframes animacionImagenDisco{
+    0%{
+        filter: grayscale(0);
+        transform: scale(1);
+    }
+    100%{
+        filter: grayscale(100%);
+        transform: scale(1.1);
+    }
+}
+
+@keyframes animacionDespliegueDisco{
+    0%{
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+/*Continuacion*/
+
+
+@keyframes zoomImagen {
+    0% {
+        filter: grayscale(100%);
+        transform: translateY(0);
+
+    }
+
+    100%{
+        filter: grayscale(0);
+        transform: translateY(-40px);
+
+    }
+}
+
+/*VENTANA DE DESCRIPCION DE DISCO*/
+.descripcionMenu{
+    position: fixed;
+    flex-direction: row;
+    z-index: 9999;
+    display: flex;
+    top: 5%;
+    left: 10%;
+    width: 80%;
+    height: 90%;
+    background-color: #23272a;
+    border: solid 1px #23272a;
+    color: white;
+    -webkit-box-shadow: 5px 10px 7px -1px rgba(255,0,0,0.36);
+    -moz-box-shadow: 5px 10px 7px -1px rgba(255,0,0,0.36);
+    box-shadow: 5px 10px 7px -1px rgba(255,0,0,0.36);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.descripcionImagen{
+    position: relative;
+    display: flex;
+    width: 50%;
+    height: 100%;
+
+}
+
+.descripcionImagen img{
+    position: relative;
+    display: flex;
+    width: 90%;
+    height: 90%;
+    left: 5%;
+    top: 5%;
+
+}
+
+.descripcionDatos{
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    display: flex;
+    
+    flex-direction: column;
+    width: 50%;
+
+    padding-left: 25px;
+
+}
+
+.descripcionDatos h3{
+   font-size: 35px;
+   overflow: visible;
+
+}
+
+.descripcionDatos p{
+    display: inline;
+    font-size: 15px;
+    overflow: visible;
+    padding: 1px;
+}
+
+.descripcionButtons{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin: 4px;
+    padding: 2px;
+    height: 10%;
+
+}
+
+.descripcionButtonCantidad{
+    display: flex;
+    flex-direction: column;
+    margin: 4px;
+    padding: 2px;
+    width: 20%;
+    height: 10%;
+    padding: 2px;
+
+}
+
+.descripcionButtons button{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    width: 60%;
+    height: 100%;
+}
+
+.descripcionButtonCantidad input{
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  width: 100%;
+}
+
+.descripcionButtonCantidad label{
+  font-size: 15px;
+}
+
+#descripcionAlbum{
+    overflow: scroll;
+}
+
+.closeButton{
+    margin: 2px;
+    border: solid 1px red;
+    border-radius: 10px;
+    min-height: calc(95%/3);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+    background-color: whitesmoke;
+    overflow: hidden;
+
+}
+
+.closeButton:hover{
+    margin: 2px;
+    border: solid 1px red;
+    border-radius: 10px;
+    min-height: calc(95%/3);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: whitesmoke;
+    font-weight: bold;
+    background-color: red;
+    overflow: hidden;
+}
+
+.addButton{
+    margin: 2px;
+    border: solid 1px blue;
+    border-radius: 10px;
+    min-height: calc(95%/3);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: blue;
+    font-weight: bold;
+    background-color: white;
+    overflow: hidden;
+}
+
+.addButton:hover{
+    border: solid 1px blue;
+    background-color: blue;
+    color: white;
+}
+/* ------------------------------------*/
+
+
+.hide{
+    display: none;
+}
+
+@media(max-width: 1000px){
+    .titulo{
+        font-size: 1.2rem;
+    }
+    
+    .imagen_container{
+      height: 10%;
+    }
+   
 
 }

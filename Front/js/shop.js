@@ -363,7 +363,7 @@ function obtenerDiscos() {
       var cookie = getCookie("sesion");
   
       cliente.postJson("obtener_discos_basico", {
-          "cookie": cookie
+            "tamano" : "120"
         },
         function(code, result) {
           if (code == 200) {
