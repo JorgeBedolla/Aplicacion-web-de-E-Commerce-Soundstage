@@ -13,6 +13,7 @@ function desplegarDiscos(disco){
 
 
     contenedorDisco.classList.add('disco');
+    contenedorDisco.onclick = () => obtenerDatosDisco(disco["nombre"]);
 
 
     //IMAGEN
@@ -28,7 +29,7 @@ function desplegarDiscos(disco){
 
 
     //PRECIO
-    precioDisco.textContent = disco["precio"];
+    precioDisco.textContent =" $" + disco["precio"];
 
     //DESPLEGAMOS
     contenedorDisco.appendChild(imagenDisco);
@@ -77,4 +78,8 @@ function obtenerDiscosMain() {
           }
         });
     });
+}
+
+function obtenerDatosDisco(nombre){
+  alert(nombre);
 }

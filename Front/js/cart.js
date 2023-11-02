@@ -363,6 +363,7 @@ function OperacionHacerCompra(){
         function(code, result){
             if(code == 200){
                 desplegarAlertMesage("Se ha realizado la compra con exito");
+                cargarDiscosMenuPrincipal();
             }
         }
     );

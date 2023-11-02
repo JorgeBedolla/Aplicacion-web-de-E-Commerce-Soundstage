@@ -369,7 +369,6 @@ function obtenerDiscos() {
           if (code == 200) {
          /*   var panelResultados = document.querySelector(".results");
             panelResultados.innerHTML = ""; // Limpiamos el panel de resultados
-  
             for (id in result) {
               desplegarDiscos(result[id]);
             }*/

@@ -445,6 +445,12 @@ namespace SoundStageProject
         {
             try
             {
+
+                string requestBody = new StreamReader(req.Body).ReadToEnd();
+                ParamTamanoImagen parametros = JsonConvert.DeserializeObject<ParamTamanoImagen>(requestBody);
+
+                int tamanoImagen = parametros.tamano;
+
                 using MySqlConnection connection = new MySqlConnection(connectionString);
                 await connection.OpenAsync();
 
@@ -472,7 +478,7 @@ namespace SoundStageProject
                             }
                             else
                             {
-                                byte[] reducedFoto = ReducirResolucion((byte[])reader["foto"], 120, 120, 80);
+                                byte[] reducedFoto = ReducirResolucion((byte[])reader["foto"], tamanoImagen, tamanoImagen, 80);//120
                                 byte[] compressedFoto = ComprimirImagen(reducedFoto, 70);
                                 disco.foto = compressedFoto;
 
@@ -2329,4 +2335,8 @@ namespace SoundStageProject
         public DateTime fecha { get; set; }
     }
 
+    public class ParamTamanoImagen
+    {
+        public int tamano { get; set; }
+    }
 }
