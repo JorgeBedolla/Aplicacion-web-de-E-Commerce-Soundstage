@@ -81,5 +81,5 @@ function obtenerDiscosMain() {
 }
 
 function obtenerDatosDisco(nombre){
-  alert(nombre);
+  //alert(nombre);
 }
